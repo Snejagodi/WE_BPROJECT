@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css" />
+  <title>hotel | TSK HOTEL</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <style>
+  
+    .popular__card {
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .popular__card:hover {
+      background-color: #f2f2f2;
+      transform: scale(1.05) rotate(3deg);
+    }
+  </style>
+  <style>
+    
+    .header__container {
+      transition: background-color 0.3s ease-in-out;
+    }
+    .hovered {
+      background-color: #edc6ed; 
+    }
+  </style>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.jqzoom').jqzoom({
+        zoomType: 'standard',
+        lens: true,
+        preloadImages: false,
+        alwaysOn: false
+      });
+    });
+  </script>
+  <style>
+    
+    .jqzoom {
+      transition: transform 0.3s ease-in-out;
+    }
+    .zoomed {
+      transform: scale(1.1);
+    }
+  </style>
+  
+</head>
+<body>
+  <nav>
+    <div class="nav__logo">WELCOME TO TSK HOTEL</div>
+    <ul class="nav__links">
+      <li class="link"><a href="#">Home</a></li>
+      <li class="link"><a href="#">Book</a></li>
+      <li class="link"><a href="#">Blog</a></li>
+      <li class="link"><a href="#">Contact Us</a></li>
+      <li class="link"><a href="loo.html">login</a></li> 
+      <li class="link"><a href="signuup.html">signup</a></li>
+    </ul>
+    
+  </nav>
+  <script>
+    $(document).ready(function() {
+      $('.nav__links').hide().fadeIn(1000); 
+    });
+  </script>
+  <div class="nav__button">
+  <header class="section__container header__container">
+    <div class="header__image__container">
+      <div class="header__content">
+        <h1>Enjoy Your Dream Vacation</h1>
+        <p>Book Hotels, Flights and stay packages at lowest price.</p>
+      </div>
+      <div class="booking__container">
+        <form>
+          <div class="form__group">
+            <div class="input__group">
+              <select> 
+                <option value=>KEERLA</option>
+                <option value=>HYDERABAD</option>
+                <option value=>TAMIL NADU</option>
+                <option value=>BANGALORE</option>
+                <option value=>TOKYO</option>
+                <option value=>AVADI</option>
+              </select> 
+            </div>
+            <p>Where are you going?</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="text" id="checkin" />
+              <label>Check In</label>
+            </div>
+            <p>Add date</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="text" id="checkout" />
+              <label>Check Out</label>
+            </div>
+            <p>Add date</p>
+          </div>
+          <div class="form__group">
+            <div class="input__group">
+              <input type="text" />
+              <label>Guests</label>
+            </div>
+            <p>Add guests</p>
+          </div>
+        </form>
+        <a href="loo.html" class="btn"><i class="ri-search-line"></i></a>
+      </div>
+    </div>
+  </header>
+  <script>
+    $(document).ready(function() {
+      $('.header__container').click(function() {
+        var randomRed = Math.floor(Math.random() * 256);
+        var randomGreen = Math.floor(Math.random() * 256);
+        var randomBlue = Math.floor(Math.random() * 256);
+        $(this).css('background-color', 'rgb(' + randomRed + ',' + randomGreen + ',' + randomBlue + ')');
+      });
+    });
+  </script>
+  <section class="section__container popular__container">
+    <h2 class="section__header">Popular Hotels</h2>
+    <div class="popular__grid">
+      <div class="popular__card">
+        <img src="C:\Users\Sneja\OneDrive\Documents\Custom Office Templates\india-kumarakom-holiday-resort.jpg" alt="popular hotel" height="200" width="200" class="jqzoom"/>
+        <div class="popular__content">
+          <div class="popular__card__header">
+            <h4>TEJU HOTEL</h4>
+            <h4>₹4999</h4>
+          </div>
+          <p>KEERLA</p>
+        </div>
+      </div>
+      <div class="popular__card">
+        <img src="C:\Users\Sneja\OneDrive\Documents\Custom Office Templates\1-japan-luxury-hotels-four-seasons-kyoto.webp" height="200" width="200" alt="popular hotel" class="jqzoom"/>
+        <div class="popular__content">
+          <div class="popular__card__header">
+            <h4>SNEJU HOTEL</h4>
+            <h4>₹5499</h4>
+          </div>
+          <p>Hyderabad,India</p>
+        </div>
+      </div>
+      <div class="popular__card">
+        <img src="C:\Users\Sneja\OneDrive\Documents\Custom Office Templates\photo-1566073771259-6a8506099945.jpg" alt="popular hotel" height="200" width="200" class="jqzoom" />
+        <div class="popular__content">
+          <div class="popular__card__header">
+            <h4>ABHI</h4>
+            <h4>₹5999</h4>
+          </div>
+          <p>Tamil nadu,India</p>
+        </div>
+      </div>
+      <div class="popular__card">
+        <img src="C:\Users\Sneja\OneDrive\Documents\Custom Office Templates\wp12082258-5-star-hotel-wallpapers.jpg" alt="popular hotel" height="200" width="200" class="jqzoom"  />
+        <div class="popular__content">
+          <div class="popular__card__header">
+            <h4>Atlantis The Palm</h4>
+            <h4>₹4499</h4>
+          </div>
+          <p>BANGALORE</p>
+        </div>
+      </div>
+      <div class="popular__card">
+        <img src="C:\Users\Sneja\OneDrive\Documents\Custom Office Templates\wp1846077-hotels-wallpapers.jpg" alt="popular hotel" height="200" width="200" class="jqzoom" />
+        <div class="popular__content">
+          <div class="popular__card__header">
+            <h4>The Ritz-Carlton</h4>
+            <h4>₹649</h4>
+          </div>
+          <p>Tokyo, Japan</p>
+        </div>
+      </div>
+      <div class="popular__card">
+        <img src="C:\Users\Sneja\OneDrive\Documents\Custom Office Templates\tulip-inn-bangalore.jpg" alt="popular hotel" height="200" width="200" class="jqzoom" />
+        <div class="popular__content">
+          <div class="popular__card__header">
+            <h4>VEL HOTEL</h4>
+            <h4>₹5499</h4>
+          </div>
+          <p>AVADI</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('.jqzoom').hover(function() {
+          $(this).addClass('zoomed');
+        }, function() {
+          $(this).removeClass('zoomed');
+        });
+      });
+    </script>
+  </section>
+  <script>
+    $(document).ready(function() {
+      $('.popular__card').hover(function() {
+        $(this).addClass('hovered');
+      }, function() {
+        $(this).removeClass('hovered');
+      });
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $("#checkin").datepicker();
+      $("#checkout").datepicker();
+      $("#aboutParagraph").fadeIn();
+      $("#aboutButton").click(function () {
+        $("#aboutParagraph").toggleClass("hidden");
+        $(document).ready(function(){
+});
+      });
+    });
+  </script>
+</body>
+</html>

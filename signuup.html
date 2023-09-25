@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up form</title>
+  <link rel="stylesheet" href="stylle.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  
+
+  <style>
+    .highlighted {
+      background-color: rgb(158, 228, 233);
+    }
+  </style>
+  <style>
+    .registration-instructions {
+      display: none;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h2 id="registrationHeading">Registration</h2>
+    <form action="majic.html" id="registrationForm">
+      <div class="input-box">
+        <input type="text" class="highlight-input" placeholder="Enter your name" required>
+      </div>
+
+      <div class="input-box" id="emailInputBox">
+        <input type="text" class="email-input" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Create password" required>
+        <button type="button" id="showPasswordBtn">Show Password</button>
+      </div> </br>
+      <div class="input-box" id="confirmPasswordBox">
+        <input type="password" class="confirm-password-input" placeholder="Confirm password" required>
+      </div>
+
+      <div class="policy">
+        <input type="checkbox">
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button" id="registerButtonBox">
+        <input type="submit" value="Register Now">
+      </div>
+
+      <div class="text">
+        <h3>Already have an account? <a href="loo.html">Login now</a></h3>
+      </div>
+      <div class="text">
+        <button id="registerInstructionsButton">How to Register</button>
+      </div>
+      <div class="registration-instructions">
+        <p>1. Fill out the registration form with your details.</p>
+        <p>2. Accept the terms and conditions.</p>
+        <p>3. Click the "Register Now" button to complete your registration.</p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $("#showPasswordBtn").click(function() {
+        var passwordField = $("#password");
+        var passwordFieldType = passwordField.attr("type");
+
+        if (passwordFieldType === "password") {
+          passwordField.attr("type", "text");
+          $("#showPasswordBtn").text("Hide Password");
+        } else {
+          passwordField.attr("type", "password");
+          $("#showPasswordBtn").text("Show Password");
+        }
+      });
+    });
+
+    $(document).ready(function() {
+      $("#registerButtonBox").mouseenter(function() {
+        $(this).find("input").slideDown("fast");
+      });
+
+      $("#registerButtonBox").mouseleave(function() {
+        $(this).find("input").slideUp("fast");
+      });
+    });
+
+    $(document).ready(function() {
+      $("#registrationHeading").hide();
+      $("#registrationHeading").fadeIn(10000);
+    });
+
+    $(document).ready(function() {
+      $(".highlight-input").mouseenter(function() {
+        $(this).addClass("highlighted");
+      });
+
+      $(".highlight-input").mouseleave(function() {
+        $(this).removeClass("highlighted");
+      });
+    });
+
+    $(document).ready(function() {
+      $(".email-input").mouseenter(function() {
+        $("#emailInputBox").effect("bounce", { times: 3, distance: 10 }, "fast");
+      });
+    });
+
+    $(document).ready(function() {
+      $("#registerInstructionsButton").click(function() {
+        $(".registration-instructions").slideToggle("slow");
+      });
+    });
+
+    $(document).ready(function() {
+      $(".confirm-password-input").focus(function() {
+        $("#confirmPasswordBox").slideDown("slow");
+      });
+
+      $(".confirm-password-input").blur(function() {
+        $("#confirmPasswordBox").slideUp("slow");
+      });
+    });
+
+    $(document).ready(function() {
+  $("#registrationForm").submit(function(event) {
+    event.preventDefault();
+    $(this).fadeOut("slow", function() {
+      // After the fade-out animation completes, submit the form
+      $("#registrationForm")[0].submit();
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Login Form </title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css" />
+  <script>
+    function validateForm() {
+      const emailInput = document.querySelector('input[type="text"]');
+      const passwordInput = document.querySelector('input[type="password"]');
+
+    
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        emailInput.classList.add("is-invalid");
+        alert("Please enter a valid email address!");
+        return false;
+      } else {
+        emailInput.classList.remove("is-invalid");
+      }
+
+      
+      if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
+        passwordInput.classList.add("is-invalid");
+        alert("Please enter a valid password!");
+        return false;
+      } else {
+        passwordInput.classList.remove("is-invalid");
+     
+      }
+
+      return true;
+    }
+  </script>
+  <style>
+    .is-invalid {
+      border: 1px solid red;
+    }
+
+    .popup {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <form action="/" onsubmit="return validateForm()">
+      <h2>Login</h2>
+      <div class="input-field">
+        <input type="text" id="name" name="text " >
+        <label for="name">Enter your email</label>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="input-field">
+        <input type="password" class="form-control" placeholder="Enter password" name="Password" required>
+        <label for="password">Enter your password</label>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      
+      <div class="register">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+    <div class="popup" id="popup"></div>
+  </div>
+</body>
+</html>
